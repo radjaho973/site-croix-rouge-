@@ -1,0 +1,121 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: Gothic;
+    src: url('./fonts/gothicb.ttf');
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+header{
+    height: 47px;
+    background-color: #E3001B;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header-logo-wrapper{
+    justify-self: start;
+    width: 46px;
+    height: 44px;
+    background-color: white;
+    border: 1px solid #000000
+    
+}
+
+.logo-small{
+    width: 46px;
+    height: 44px;
+    
+}
+
+h1{
+    font-family: Gothic;
+}
+h1>span{
+    
+    font-weight: lighter;
+}
+
+nav>ul>li{
+    display: inline-block;
+    list-style: none;
+    text-decoration: none;
+}
+
+li>a{
+    color: #000000;
+    text-decoration: none;
+}
+
+section.hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-bg{
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url(./public/hero-bg.jpg) no-repeat center ;
+    background-size: cover;
+    width: 100vw;
+    height: 495px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-white{
+    width: 120px;
+    height: 40px;
+    border: 3px solid #FFFFFF;
+    background-color: transparent;
+    color: white;
+    transition: background-color 0.5s ease, color 0.5s ease, border 0.3s ease;
+    
+}
+.button-white:hover{
+    background-color: white;
+    color: #000000;
+    border: 0px ;
+}
+
+section.description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+.red-square{
+    display: flex;
+    justify-content: center;
+    width: 185px;
+    height: 80px;
+    background-color: #E3001B;
+    padding-top: 10px;
+}
+.red-square>p{
+    font-size: 14px;
+    font-family: Gothic;
+}
+.black-square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 185px;
+    height: 80px;
+    background-color: #181818;
+}
+.black-square>p{
+    font-size: 10px;
+}
+
