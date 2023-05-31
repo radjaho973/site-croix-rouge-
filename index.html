@@ -4,51 +4,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
     <header>
-        <div class="header-logo-wrapper">
-            <img class="logo-small" src="./public/croix-rouge-logo-small.png" alt="">
-        </div>
-        <h1>croix-rouge<span> française </span></h1>
-        <nav>
-            <ul>
-                <li><a href="#">Acceuil</a></li>
-                <li><a href="#">Nos Actions</a></li>
-                <li><a href="#">Actualités</a></li>
-            </ul>
-        </nav>
+        <nav class="navbar navbar-expand-sm fixed-top py-3 nav-bg-color">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><h1>croix-rouge<span class="h1"> française </span></h1></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Acceuil</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#action">Nos Actions</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./news.html">Actualités</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
     </header>
 
     <main>
 
+
         <section class="hero">
             <div class="hero-bg">
-                <button class="button-white">Nos actions</button>
+                <a href="#action">
+                    <button class="button-white">Nos actions</button>
+                </a>
             </div>
         </section>
 
         <section class="description">
-            <div class="red-square">
-                <p>La Croix Rouge Française</p>
+            <div class="square-wrapper">
+                <div class="red-square">
+                    <p>La Croix Rouge Française</p>
+                </div>
+                <div class="black-square">
+                    <p>
+                        La Croix-Rouge française (CRF) est une association d'aide humanitaire française
+                        fondée en 1864. Elle a pour objectif de venir en aide aux personnes en 
+                        difficulté en France et à l'étranger.
+                    </p>
+                </div>
             </div>
-            <div class="black-square">
-                <p>
-                    La Croix-Rouge française (CRF) est une association d'aide humanitaire française
-                     fondée en 1864. Elle a pour objectif de venir en aide aux personnes en 
-                     difficulté en France et à l'étranger.
-                </p>
-            </div>
-        </section>
+            </section>
 
         <section class="actions">
             <div class="title-wrapper">
-                <h2>Nos actions</h2>
+                <h2 id="action">Nos actions</h2>
             </div>
             <div class="img-wrapper">
-                <img src="" alt="">
+                <img src="./public/nos-actions.jpg" alt="" class="img">
+                <div class="hover-text">
+                    <p>La Croix-Rouge française est une organisation humanitaire qui travaille pour
+                         soulager la souffrance des personnes en situation de vulnérabilité. Pour 
+                         atteindre cet objectif, nous mettons en place des actions diverses et 
+                         variées qui s'adaptent aux besoins des communautés que nous servons.
+                        Nos actions se concentrent sur plusieurs domaines clés, tels que la santé, 
+                        l'inclusion sociale, 
+                        la réponse aux catastrophes naturelles, la protection des populations 
+                        vulnérables et l'accompagnement 
+                        des personnes en situation de précarité.
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -57,23 +85,74 @@
                 <h2>Actualités </h2>
             </div>
             <div class="img-wrapper">
-                <img src="" alt="">
+                <img src="./public/actualite-pls.jpg" alt="" class="img">
+                <div class="hover-text">
+                    <p>La Croix-Rouge française lance une campagne de sensibilisation pour 
+                        apprendre les gestes de premiers secours aux acheteurs de Shiba Coin !
+                    </p>
+                    <a href="./news.html">
+                        <button class="button-white">En savoir plus</button>
+                    </a>
+                </div>
             </div>
         </section>
 
         <footer>
             <div class="logo-wrapper">
-                <img src="logo" alt="">
+                <img src="./public/logo_croix-rouge-footer.gif" alt="">
             </div>
             <div class="footer-menu">
                 <h3>Plan du site</h3>
                 <ul>
                     <li><a href="#">Acceuil</a></li>
                     <li><a href="#">Nos Actions</a></li>
-                    <li><a href="#">Actualités</a></li>
+                    <li><a href="./news.html">Actualités</a></li>
                 </ul>
             </div>
         </footer>
+
+
     </main>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script>
+    //On récupère et on assigne chaque élément qui va interagir au survol de la souris
+    let img = document.querySelectorAll(".img")
+    
+    let [img1, img2] = img
+
+    let hoverText = document.querySelectorAll(".hover-text")
+    
+    let [hover1, hover2] = hoverText
+    
+    // au chargement de la page on récupère la taille des images et on applique la taille 
+    // au élément de survolement
+    window.onload = setSize
+    window.addEventListener("resize",setSize)
+    
+    function setSize(){ 
+        hover1.style.height = img1.getBoundingClientRect().height + "px"
+        
+        hover1.style.width = img1.getBoundingClientRect().width + "px"
+        
+        hover2.style.height = img2.getBoundingClientRect().height + "px"
+        
+        hover2.style.width = img2.getBoundingClientRect().width + "px"
+    }
+    //ajout des évènement pour activer l'affichage au survol
+    img1.addEventListener("mousemove",()=>{
+        hover1.classList.toggle("hovering")
+    })
+    hover1.addEventListener("mouseleave",()=>{
+        hover1.classList.toggle("hovering")
+    })
+   
+    img2.addEventListener("mousemove",()=>{
+        hover2.classList.toggle("hovering")
+    })
+    hover2.addEventListener("mouseleave",()=>{
+        hover2.classList.toggle("hovering")
+    })
+   
+    </script>
 </html>

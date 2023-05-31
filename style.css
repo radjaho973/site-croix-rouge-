@@ -1,8 +1,14 @@
 *{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+/* écraser le reboot bootstrap */
+p{
+    margin-bottom: 0px;
+    font-size: clamp(0.5625rem, 0.4324rem + 0.6306vw, 1rem);
 }
 @font-face {
     font-family: Gothic;
@@ -13,15 +19,18 @@ body{
     width: 100vw;
     height: 100vh;
 }
-
-header{
-    height: 47px;
-    background-color: #E3001B;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    align-items: center;
+h1, h2,h3, h4, h5, h6,span{
+    /* !important pour écraser le css de bootstrap */
+    font-size: clamp(0.875rem, 0.6892rem + 0.9009vw, 1.5rem) !important;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-weight:500;
+        line-height: 1;
+    
 }
+
+
+
 
 .header-logo-wrapper{
     justify-self: start;
@@ -45,14 +54,16 @@ h1>span{
     
     font-weight: lighter;
 }
-
+.nav-bg-color{
+    background-color: #E3001B;
+}
 nav>ul>li{
     display: inline-block;
     list-style: none;
     text-decoration: none;
 }
 
-li>a{
+a{
     color: #000000;
     text-decoration: none;
 }
@@ -93,29 +104,147 @@ section.description{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px;
+    height: clamp(204px, 45vh, 495px);
+}
+.square-wrapper{
+    width: 80.3%;
+    height: 58.8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .red-square{
     display: flex;
     justify-content: center;
-    width: 185px;
-    height: 80px;
+    height: 30%;
+    width: 75%;
+    padding-inline: 5px;
+    padding-block: 10px;
     background-color: #E3001B;
-    padding-top: 10px;
+    transform: translateX(-28px);
 }
 .red-square>p{
-    font-size: 14px;
+    font-size: clamp(0.875rem, 0.6892rem + 0.9009vw, 1.5rem);
     font-family: Gothic;
 }
 .black-square{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 185px;
-    height: 80px;
+    height: 30%;
+    width: 75%;
+    padding-block: 10px;
+    padding-inline: 5px;
     background-color: #181818;
+    transform: translateX(28px);
+    transform: translateY(-45px);
 }
 .black-square>p{
-    font-size: 10px;
+    font-size: clamp(0.5625rem, 0.4324rem + 0.6306vw, 1rem);
+    color: #FFFFFF;
+    text-align: justify;
 }
 
+
+section.actions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #E3001B;
+}
+.img-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.actions img{
+    width: 90%;
+    margin-bottom: 30px;
+}
+.title-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 9%;
+    margin-inline: auto;
+    height: 40px;
+    background-color: #181818;
+    width: 90%;
+    
+}
+.actions h2{
+    color: white;
+}
+section.news{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #181818;
+}
+.img-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.news img{
+    width: 90%;
+    margin-bottom: 30px;
+}
+.news > .title-wrapper{
+    background-color: #FFFFFF;
+}
+.news h2{
+    color: #000000;
+}
+
+footer{
+    padding-block: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.logo-wrapper img{
+    width: 200px;
+}
+.footer-menu>ul>li{
+    list-style: none;
+    text-decoration: none;
+}
+
+/* texte au survol */
+.hover-text{
+    display: none;
+}
+
+.hovering{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position:absolute;
+    background-color: hsla(0, 0%, 9%, 0.589);
+    color: white;
+    padding: 15px;
+}
+
+.hovering p{
+    text-align: center;
+    pointer-events: none;
+    /* padding-block: 10px; */
+}
+
+@media screen and (min-width:610px) {
+    .black-square{
+        height: 150px;
+        transform: translateY(-60px);
+    }
+    .red-square{
+        
+        height: 150px;
+    }
+    .title-wrapper{
+        height: 70px;
+    }
+}
