@@ -1,5 +1,9 @@
+@font-face {
+    font-family: Gothic;
+    src: url('./fonts/gothicb.ttf');
+}
 *{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Gothic;
     font-size: 14px;
     margin: 0;
     padding: 0;
@@ -10,16 +14,14 @@ p{
     margin-bottom: 0px;
     font-size: clamp(0.5625rem, 0.4324rem + 0.6306vw, 1rem);
 }
-@font-face {
-    font-family: Gothic;
-    src: url('./fonts/gothicb.ttf');
+header{
+    height: 57.9px;
 }
-
 body{
     width: 100vw;
     height: 100vh;
 }
-h1, h2,h3, h4, h5, h6,span{
+h1, h2,h3, h4, h5, h6{
     /* !important pour écraser le css de bootstrap */
     font-size: clamp(0.875rem, 0.6892rem + 0.9009vw, 1.5rem) !important;
         margin-top: 0;
@@ -29,6 +31,10 @@ h1, h2,h3, h4, h5, h6,span{
     
 }
 
+span{
+    font-size: clamp(0.875rem, 0.6892rem + 0.9009vw, 1.5rem) !important;
+    font-weight: 400;
+}
 
 
 
@@ -76,7 +82,7 @@ section.hero{
 
 .hero-bg{
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-    url(./public/hero-bg.jpg) no-repeat center ;
+    url(./public/hero-bg.jpg) no-repeat top center  ;
     background-size: cover;
     width: 100vw;
     height: 495px;
@@ -146,11 +152,14 @@ section.description{
     text-align: justify;
 }
 
-
-section.actions{
+section{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+section.actions{
     background-color: #E3001B;
 }
 .img-wrapper{
@@ -177,18 +186,16 @@ section.actions{
     color: white;
 }
 section.news{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     background-color: #181818;
 }
 .img-wrapper{
     display: flex;
     justify-content: center;
+    width: 90%;
 }
 
 .news img{
-    width: 90%;
+    /* width: 90%; */
     margin-bottom: 30px;
 }
 .news > .title-wrapper{
@@ -227,6 +234,7 @@ footer{
     background-color: hsla(0, 0%, 9%, 0.589);
     color: white;
     padding: 15px;
+    gap: 15px;
 }
 
 .hovering p{
@@ -247,4 +255,36 @@ footer{
     .title-wrapper{
         height: 70px;
     }
+}
+
+
+/* Page News */
+.news-title{
+    color: white;
+}
+article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #181818;
+    border-top: #FFFFFF 1px solid;
+    padding-block: 20px;
+    gap: 20px;
+}
+.article-title{
+    color: white;
+    text-align: center;
+}
+article img{
+    width: 90%;
+    object-fit:fill;
+}
+
+article p{
+    color: white;
+    text-align: justify;
+    width: 90%;
+
+    
 }
